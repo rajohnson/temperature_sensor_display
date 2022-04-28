@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "thermistor.h"
+#include "render.h"
 
 /* USER CODE END Includes */
 
