@@ -25,6 +25,7 @@
 
 #include "thermistor.h"
 #include "render.h"
+#include <iso646.h>
 
 /* USER CODE END Includes */
 
@@ -105,12 +106,23 @@ int main(void)
   MX_ADC_Init();
   /* USER CODE BEGIN 2 */
 
+  thermistor_init();
+  render_init();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  thermistor_begin_reading();
+	  while(not thermistor_reading_complete());
+	  render_values(thermistor_get_reading(), thermistor_get_units());
+
+	  HAL_Delay(1000);
+	  // todo sleep?
+	  // todo - add wdt?
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
