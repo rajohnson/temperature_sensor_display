@@ -15,7 +15,7 @@ void display_clear_all(void) {
 	// todo
 }
 
-void display_clear_line(uint8_t row) {
+void display_clear_row(uint8_t row) {
 	// todo
 }
 
@@ -25,4 +25,10 @@ void display_set_cursor(uint8_t row, uint8_t column) {
 
 void display_write(char* text) {
 	// todo
+}
+
+void display_write_row(uint8_t row, char* text) {
+	display_clear_row(row);
+	display_set_cursor(row, 0);
+	display_write(text);
 }
