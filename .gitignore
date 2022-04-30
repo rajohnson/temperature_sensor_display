@@ -51,4 +51,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-Debug/
+examples/stm32f030r8/Debug/

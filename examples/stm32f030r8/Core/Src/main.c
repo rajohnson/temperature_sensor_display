@@ -114,11 +114,13 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+
 	  thermistor_begin_reading();
 	  while(not thermistor_reading_complete());
 	  render_values(thermistor_get_reading(), thermistor_get_units());
 
-	  HAL_Delay(1000);
+	  HAL_Delay(200);
 	  // todo sleep?
 	  // todo - add wdt?
 
