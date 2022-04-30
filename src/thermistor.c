@@ -84,7 +84,7 @@ void thermistor_set_units(char* newUnits) {
 }
 
 static float_t thermistor_get_reading_c(void) {
-	return 100;	// todo
+	return thermistor_get_reading_k() - 273.15;	// todo
 }
 
 static float_t thermistor_get_reading_f(void) {
@@ -92,5 +92,27 @@ static float_t thermistor_get_reading_f(void) {
 }
 
 static float_t thermistor_get_reading_k(void) {
-	return thermistor_get_reading_c() + 273.15;	// todo round
+	// convert AD reading to a voltage
+	// V = (Vref / 2^N) * c
+	// where:
+	//		V is the voltage at the ADC
+	//		Vref is the ADC reference voltage
+	//		N is the ADC resolution
+	//		c is the ADC readings
+
+	// find resistance from the voltage
+	// Rthemistor = (R * Vs) / (1 - Vs)
+	// where:
+	//		R is the resistance of the upper resistor in the voltage divider
+	// 		Vs is the voltage applied to the top of the voltage divider
+
+	// find temperature from the resistance using the Steinhart Hart equation
+	// 1 / T = ((1 / T0) + ln(Rt / R0) / B)
+	// where:
+	//		T is the current temperature
+	//		Rt is the current resistance of the thermistor
+	//		R0 is the resistance at the base temperature
+	//		B is the thermistor's beta value
+
+	return 273.15;	// todo round
 }
