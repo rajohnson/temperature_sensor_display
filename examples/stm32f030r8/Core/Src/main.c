@@ -24,9 +24,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "hal_delay.h"
-#include "thermistor.h"
-#include "render.h"
-#include <iso646.h>
+#include "controller.h"
 
 /* USER CODE END Includes */
 
@@ -103,9 +101,7 @@ int main(void)
   MX_ADC_Init();
   MX_TIM17_Init();
   /* USER CODE BEGIN 2 */
-
-  thermistor_init();
-  render_init();
+  controller_init();
 
   /* USER CODE END 2 */
 
@@ -115,13 +111,9 @@ int main(void)
   {
 	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 
-	  thermistor_begin_reading();
-	  while(not thermistor_reading_complete());
-	  render_values(thermistor_get_reading(), thermistor_get_units());
+	  controller_execute_cycle();
 
 	  hal_delay_ms(1000);
-	  // todo sleep?
-	  // todo - add wdt?
 
     /* USER CODE END WHILE */
 
