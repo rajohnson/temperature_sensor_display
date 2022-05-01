@@ -13,7 +13,7 @@
 static void set_st_hal_output(enum halIOStateEnum state, GPIO_TypeDef* port, uint16_t pin);
 
 void hal_gpio_init(void) {
-	// todo
+	// already done in main loop with cubeMX functions in this implementation.
 }
 
 void hal_gpio_set_display_rs(enum halIOStateEnum state) {
