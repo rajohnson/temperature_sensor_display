@@ -64,6 +64,8 @@ static void writeNibble(uint8_t nibble, enum rsEnum register_select);
 static void writeByte(uint8_t data, enum rsEnum register_select);
 
 void display_init(void) {
+	hal_delay_init();
+
 	// The display needs at least 40ms (if Vsupply is 3.3V, need >15ms if 3.3V)
 	//  to start up before beginning the initialization sequence.
 	hal_delay_ms(40);
