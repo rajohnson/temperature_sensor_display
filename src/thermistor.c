@@ -44,7 +44,14 @@ float_t thermistor_get_reading(void) {
 		result = thermistor_get_reading_c(adc_count);
 		break;
 	}
-	return result;	// todo - round this value to 1 decimal place
+
+	// round the result to the nearest tenth.
+	result *= 10;
+	result += 0.5;
+	result = floor(result);
+	result /= 10;
+
+	return result;
 }
 
 char* thermistor_get_units(void) {
