@@ -3,6 +3,7 @@
  *
  *  Created on: Apr 30, 2022
  *      Author: RAJ
+ *	HAL abstraction layer to provide delays.
  */
 
 #ifndef HAL_DELAY_H_

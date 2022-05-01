@@ -3,6 +3,7 @@
  *
  *  Created on: Apr 30, 2022
  *      Author: RAJ
+ *  HAL abstraction layer to provide GPIO.
  */
 
 #ifndef HAL_GPIO_H_

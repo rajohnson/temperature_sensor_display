@@ -3,6 +3,9 @@
  *
  *  Created on: Apr 27, 2022
  *      Author: RAJ
+ *
+ *	Rendering system. Takes in values from the model and processes them into
+ *	 as form that can be used within the view.
  */
 
 #include "render.h"
