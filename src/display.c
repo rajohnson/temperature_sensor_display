@@ -89,8 +89,6 @@ void display_init(void) {
 	writeByte(set_entry_mode | entryMode, instruction);
 
 	display_clear_all();
-
-	hal_delay_us(53); // todo - rm line
 }
 
 void display_clear_all(void) {
