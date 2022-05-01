@@ -10,4 +10,14 @@
 
 #include <stdint.h>
 
+/*
+ * Blocking delay for given number of us.
+ */
+void hal_delay_us(uint32_t delay_us);
+
+/*
+ * Blocking delay for given number of ms.
+ */
+void hal_delay_ms(uint32_t delay_ms);
+
 #endif /* HAL_DELAY_H_ */
