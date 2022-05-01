@@ -3,6 +3,8 @@
  *
  *  Created on: Apr 27, 2022
  *      Author: RAJ
+ *
+ *	Module to read a thermistor and return the temperature.
  */
 
 #ifndef THERMISTOR_H_
@@ -19,17 +21,6 @@
  * Initialize the thermistor module.
  */
 void thermistor_init(void);
-
-/*
- * Begins a thermistor reading.
- */
-void thermistor_begin_reading(void);
-
-/*
- * Checks to determine if the reading is in progress (false) or has been
- * 	completed (true).
- */
-bool thermistor_reading_complete(void);
 
 /*
  * Return the thermistor temperature reading in the units specifed with 1
