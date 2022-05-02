@@ -21,7 +21,7 @@ void render_init(void);
 /*
  * Renders the readings to the screen.
  */
-void render_values(float_t temperature, char* temperature_units);
+void render_values(float_t thermistor_reading, char* thermistor_units, float_t thermocouple_reading, char* thermocouple_units);
 
 
 #endif /* INC_RENDER_H_ */

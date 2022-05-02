@@ -25,6 +25,7 @@ static struct renderingBufferStruct renderingData;
 
 enum lineEnum{
 	thermistor = 0,
+	thermocouple = 1,
 	end = MAX_ROW
 };
 
@@ -43,12 +44,19 @@ void render_init(void) {
 	update_display();
 }
 
-void render_values(float_t temperature_reading, char* temperature_units) {
+void render_values(float_t thermistor_reading, char* thermistor_units, float_t thermocouple_reading, char* thermocouple_units) {
 	clear_line_data(thermistor);
-	if(temperature_reading == NAN) {
+	if(thermistor_reading == NAN) {
 		snprintf(renderingData.line[thermistor], MAX_COLUMN, "Thermistor: error");
 	} else {
-		snprintf(renderingData.line[thermistor], MAX_COLUMN, "Thermistor: %.1f%s", temperature_reading, temperature_units);
+		snprintf(renderingData.line[thermistor], MAX_COLUMN, "Thermistor: %.1f%s", thermistor_reading, thermistor_units);
+	}
+
+	clear_line_data(thermocouple);
+	if(thermocouple_reading == NAN) {
+		snprintf(renderingData.line[thermocouple], MAX_COLUMN, "Thermocouple: error");
+	} else {
+		snprintf(renderingData.line[thermocouple], MAX_COLUMN, "Thermocouple: %.0f%s", thermocouple_reading, thermocouple_units);
 	}
 
 	update_display();
