@@ -40,6 +40,10 @@ void hal_gpio_set_display_d4(enum halIOStateEnum state) {
 	set_st_hal_output(state, DISPLAY_D4_GPIO_Port, DISPLAY_D4_Pin);
 }
 
+void hal_gpio_set_thermocouple_cs(enum halIOStateEnum state) {
+	set_st_hal_output(state, THERMOCOUPLE_SS_GPIO_Port, THERMOCOUPLE_SS_Pin);
+}
+
 static void set_st_hal_output(enum halIOStateEnum state, GPIO_TypeDef* port, uint16_t pin) {
 	GPIO_PinState st_hal_state;
 	if(state == low) {

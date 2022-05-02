@@ -31,5 +31,7 @@ void hal_gpio_set_display_d6(enum halIOStateEnum state);
 void hal_gpio_set_display_d5(enum halIOStateEnum state);
 void hal_gpio_set_display_d4(enum halIOStateEnum state);
 
+void hal_gpio_set_thermocouple_cs(enum halIOStateEnum state);
+
 
 #endif /* HAL_GPIO_H_ */
