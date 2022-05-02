@@ -15,7 +15,7 @@
 
 void controller_init(void) {
     thermistor_init();
-    thermocouple_init(17.5);
+    thermocouple_init(0);
     render_init();
 }
 
